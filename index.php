@@ -17,11 +17,11 @@ $results = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}posts WHERE post_ty
 while(have_posts()) :  the_post();
     
   the_title('<h2><a class="readmore" href="'.get_the_permalink().'">', '</a></h2>');
-//   if(is_single()){
-//     the_content();
-//   }else{
-//     the_excerpt();
-//   }
+  if(is_single()){
+    the_content();
+  }else{
+    the_excerpt();
+  }
 
   ?>
   <a href="<?php the_permalink(); ?>"></a>
